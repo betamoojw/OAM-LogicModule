@@ -9,11 +9,12 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #define MAIN_OpenKnxId 0xA0
-#define MAIN_ApplicationNumber 49
-#define MAIN_ApplicationVersion 145
-#define MAIN_ParameterSize 899
-#define MAIN_MaxKoNumber 49
-#define MAIN_OrderNumber "OpenKnxLogicDev"
+#define MAIN_ApplicationNumber 48
+#define MAIN_ApplicationVersion 50
+#define MAIN_ParameterSize 8375
+#define MAIN_MaxKoNumber 316
+#define MAIN_OrderNumber "OpenKnxLogic"
+#define BASE_ModuleVersion 17
 #define LOG_ModuleVersion 50
 // Parameter with single occurrence
 
@@ -159,9 +160,6 @@
 #define LOG_HolidaySend                         46      // 1 Bit, Bit 2
 #define     LOG_HolidaySendMask 0x04
 #define     LOG_HolidaySendShift 2
-#define LOG_EnableSave                          46      // 1 Bit, Bit 1
-#define     LOG_EnableSaveMask 0x02
-#define     LOG_EnableSaveShift 1
 #define LOG_Neujahr                             47      // 1 Bit, Bit 7
 #define     LOG_NeujahrMask 0x80
 #define     LOG_NeujahrShift 7
@@ -278,8 +276,6 @@
 #define ParamLOG_VacationRead                        ((bool)(knx.paramByte(LOG_VacationRead) & LOG_VacationReadMask))
 // Nach Neuberechnung Feiertagsinfo senden?
 #define ParamLOG_HolidaySend                         ((bool)(knx.paramByte(LOG_HolidaySend) & LOG_HolidaySendMask))
-// Speichern von Werten in Hardware möglich?
-#define ParamLOG_EnableSave                          ((bool)(knx.paramByte(LOG_EnableSave) & LOG_EnableSaveMask))
 // 1. Neujahr
 #define ParamLOG_Neujahr                             ((bool)(knx.paramByte(LOG_Neujahr) & LOG_NeujahrMask))
 // 2. Heilige Drei Könige
@@ -372,7 +368,7 @@
 // Buzzer sperren
 #define KoLOG_BuzzerLock                          (knx.getGroupObject(LOG_KoBuzzerLock))
 
-#define LOG_ChannelCount 10
+#define LOG_ChannelCount 99
 
 // Parameter per channel
 #define LOG_ParamBlockOffset 59
@@ -494,9 +490,6 @@
 #define LOG_fE1Low6Valid                        20      // 1 Bit, Bit 1
 #define     LOG_fE1Low6ValidMask 0x02
 #define     LOG_fE1Low6ValidShift 1
-#define LOG_fE1Low7Valid                        20      // 1 Bit, Bit 0
-#define     LOG_fE1Low7ValidMask 0x01
-#define     LOG_fE1Low7ValidShift 0
 #define LOG_fE1Low0Dpt2                         13      // 8 Bits, Bit 7-0
 #define LOG_fE1Low1Dpt2                         14      // 8 Bits, Bit 7-0
 #define LOG_fE1Low2Dpt2                         15      // 8 Bits, Bit 7-0
@@ -638,9 +631,6 @@
 #define LOG_fE2Low6Valid                        35      // 1 Bit, Bit 1
 #define     LOG_fE2Low6ValidMask 0x02
 #define     LOG_fE2Low6ValidShift 1
-#define LOG_fE2Low7Valid                        35      // 1 Bit, Bit 0
-#define     LOG_fE2Low7ValidMask 0x01
-#define     LOG_fE2Low7ValidShift 0
 #define LOG_fE2Low0Dpt2                         28      // 8 Bits, Bit 7-0
 #define LOG_fE2Low1Dpt2                         29      // 8 Bits, Bit 7-0
 #define LOG_fE2Low2Dpt2                         30      // 8 Bits, Bit 7-0
@@ -1276,8 +1266,6 @@
 #define ParamLOG_fE1Low5Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE1Low5Valid)) & LOG_fE1Low5ValidMask))
 // Nächste Zeile auswerten?
 #define ParamLOG_fE1Low6Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE1Low6Valid)) & LOG_fE1Low6ValidMask))
-// Nächste Zeile auswerten?
-#define ParamLOG_fE1Low7Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE1Low7Valid)) & LOG_fE1Low7ValidMask))
 // Eingang ist EIN, wenn Wert gleich
 #define ParamLOG_fE1Low0Dpt2                         (knx.paramByte(LOG_ParamCalcIndex(LOG_fE1Low0Dpt2)))
 // ... oder wenn Wert gleich 
@@ -1478,8 +1466,6 @@
 #define ParamLOG_fE2Low5Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE2Low5Valid)) & LOG_fE2Low5ValidMask))
 // Nächste Zeile auswerten?
 #define ParamLOG_fE2Low6Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE2Low6Valid)) & LOG_fE2Low6ValidMask))
-// Nächste Zeile auswerten?
-#define ParamLOG_fE2Low7Valid                        ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fE2Low7Valid)) & LOG_fE2Low7ValidMask))
 // Eingang ist EIN, wenn Wert gleich
 #define ParamLOG_fE2Low0Dpt2                         (knx.paramByte(LOG_ParamCalcIndex(LOG_fE2Low0Dpt2)))
 // ... oder wenn Wert gleich 
@@ -2055,11 +2041,11 @@
 
 // Header generation for Module 'BASE_KommentarModule'
 
-#define BASE_KommentarModuleCount 10
+#define BASE_KommentarModuleCount 99
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 899
+#define BASE_KommentarModuleParamOffset 8375
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 
