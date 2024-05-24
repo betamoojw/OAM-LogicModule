@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "../knx"
+		},
+		{
+			"path": "../OFM-ConfigTransfer"
 		}
 	],
 	"settings": {
@@ -35,6 +38,7 @@
 			"statusBar.background": "#058b00",
 			"titleBar.activeBackground": "#058b00",
 			"titleBar.activeForeground": "#ffffff"
-		}
+		},
+		"splitJoinText.defaultSeparator": "§"
 	}
 }
