@@ -16,6 +16,7 @@
 #define MAIN_OrderNumber "OpenKnxLogicIP"
 #define BASE_ModuleVersion 17
 #define NET_ModuleVersion 2
+#define UCT_ModuleVersion 1
 #define LOG_ModuleVersion 50
 // Parameter with single occurrence
 
@@ -192,6 +193,8 @@
 #define ParamNET_LanMode                             ((knx.paramByte(NET_LanMode) & NET_LanModeMask) >> NET_LanModeShift)
 // 
 #define ParamNET_Dummy                               (knx.paramByte(NET_Dummy))
+
+
 
 #define LOG_BuzzerInstalled                     122      // 1 Bit, Bit 7
 #define     LOG_BuzzerInstalledMask 0x80
