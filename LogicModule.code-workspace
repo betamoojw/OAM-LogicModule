@@ -1,27 +1,35 @@
 {
 	"folders": [
 		{
+			"name": "OAM-Logicmodule",
 			"path": "."
 		},
 		{
+			"name": "OFM-LogicModule",
 			"path": "../OFM-LogicModule"
 		},
 		{
+			"name": "OGM-Common",
 			"path": "../OGM-Common"
 		},
 		{
+			"name": "OFM-FileTransferModule",
 			"path": "../OFM-FileTransferModule"
 		},
 		{
-			"path": "../OFM-UsbExchange"
-		},
-		{
+			"name": "OFM-Network",
 			"path": "../OFM-Network"
 		},
 		{
+			"name": "OFM-UsbExchange",
+			"path": "../OFM-UsbExchange"
+		},
+		{
+			"name": "knx",
 			"path": "../knx"
 		},
 		{
+			"name": "OFM-ConfigTransfer",
 			"path": "../OFM-ConfigTransfer"
 		}
 	],
