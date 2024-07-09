@@ -6,8 +6,6 @@
   
   <op:config name="%BASE_ManualSave%" value="3" />
   <op:config name="%BASE_StartupDelay%" value="5" />
-
-  <op:nowarn id="1" regex="NET_VerifyVersion" />
   
   <op:ETS ProductName="Logikmodul-IP"
     OpenKnxId="0xA0"

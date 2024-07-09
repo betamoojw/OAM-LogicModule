@@ -11,6 +11,8 @@
   <op:config name="%LOG_BuzzerDefault%" value="0" />
   <op:config name="%BASE_ManualSave%" value="3" />
 
+  <op:nowarn id="1" regex="NET_VerifyVersion" />
+
   <op:ETS ProductName="Logikmodul"
     OpenKnxId="0xA0"
     ApplicationNumber="0x30"
