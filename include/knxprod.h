@@ -10,7 +10,7 @@
                                              
 #define MAIN_OpenKnxId 0xA0
 #define MAIN_ApplicationNumber 49
-#define MAIN_ApplicationVersion 223
+#define MAIN_ApplicationVersion 226
 #define MAIN_ParameterSize 5580
 #define MAIN_MaxKoNumber 109
 #define MAIN_OrderNumber "OpenKnxLogicDev"
@@ -1351,6 +1351,9 @@
 #define LOG_fOOutputFilter                      52      // 2 Bits, Bit 4-3
 #define     LOG_fOOutputFilterMask 0x18
 #define     LOG_fOOutputFilterShift 3
+#define LOG_fOSendOnChange                      52      // 1 Bit, Bit 3
+#define     LOG_fOSendOnChangeMask 0x08
+#define     LOG_fOSendOnChangeShift 3
 #define LOG_fODpt                               53      // 8 Bits, Bit 7-0
 #define LOG_fOOn                                54      // 8 Bits, Bit 7-0
 #define LOG_fOOnBuzzer                          54      // 8 Bits, Bit 7-0
@@ -2177,6 +2180,8 @@
 #define ParamLOG_fORepeat                            ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fORepeat)) & LOG_fORepeatMask))
 // Wiederholungsfilter
 #define ParamLOG_fOOutputFilter                      ((knx.paramByte(LOG_ParamCalcIndex(LOG_fOOutputFilter)) & LOG_fOOutputFilterMask) >> LOG_fOOutputFilterShift)
+// Sendeverhalten für Ausgang
+#define ParamLOG_fOSendOnChange                      ((bool)(knx.paramByte(LOG_ParamCalcIndex(LOG_fOSendOnChange)) & LOG_fOSendOnChangeMask))
 // DPT für Ausgang
 #define ParamLOG_fODpt                               (knx.paramByte(LOG_ParamCalcIndex(LOG_fODpt)))
 // Wert für EIN senden?
