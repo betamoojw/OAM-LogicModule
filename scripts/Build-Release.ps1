@@ -63,8 +63,8 @@ if (!$?) { exit 1 }
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Sensormodul_v30_SAMD firmware-Sensormodul-v30-SAMD bin Sensormodul-v3.0-SAMD
 if (!$?) { exit 1 }
 
-# TEMPORARY: We use our own generic updload files for this version
-Copy-Item scripts/data/* release/data -Force
+# # TEMPORARY: We use our own generic updload files for this version
+# Copy-Item scripts/data/* release/data -Force
 
 # execute generic post-build steps
 lib/OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
