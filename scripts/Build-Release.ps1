@@ -41,16 +41,16 @@ lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_1TE_RP2040_SmartMF 
 if (!$?) { exit 1 }
 
 # build firmware for OpenKNX-REG1-Base
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OpenKNX_REG1_Controller2040 firmware-OpenKNX-REG1-BASE-V0 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OpenKNX_REG1_BASE_V0 firmware-OpenKNX-REG1-BASE-V0 uf2
 if (!$?) { exit 1 }
 
 # build firmware for OpenKNX-REG1-Base
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OpenKNX_REG1_BASE_V1 firmware-OpenKNX-REG1-BASE-V1 uf2
 if (!$?) { exit 1 }
 
-# build firmware for RP2040 sensormodule breakout board
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Sensormodul_Breakout_RP2040 firmware-Sensormodul-Breakout-RP2040 uf2 Sensormodul-Breakout-Board-Just-for-testers
-if (!$?) { exit 1 }
+# # build firmware for RP2040 sensormodule breakout board
+# lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Sensormodul_Breakout_RP2040 firmware-Sensormodul-Breakout-RP2040 uf2 Sensormodul-Breakout-Board-Just-for-testers
+# if (!$?) { exit 1 }
 
 # build firmware for RP2040 sensormodule 
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Sensormodul_v40_RP2040 firmware-Sensormodul-v40-RP2040 uf2 Sensormodul-v4.x-RP2040

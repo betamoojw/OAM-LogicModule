@@ -2,7 +2,7 @@
 #ifdef ARDUINO_ARCH_RP2040
     #include "FileTransferModule.h"
     #include "UsbExchangeModule.h"
-    #if defined(KNX_IP_W5500) || defined(KNX_IP_GENERIC) || defined(KNX_IP_WIFI)
+    #if defined(KNX_IP_LAN) || defined(KNX_IP_WIFI)
         #include "NetworkModule.h"
     #endif
 #endif
@@ -14,14 +14,14 @@
 void setup()
 {
     // change this also in library.json
-    const uint8_t firmwareRevision = 0;
+    const uint8_t firmwareRevision = 1;
     openknx.init(firmwareRevision);
     openknx.addModule(1, openknxLogic);
 #ifdef ARDUINO_ARCH_RP2040
     // openknx.addModule(2, new UpdaterModule());
     openknx.addModule(9, openknxFileTransferModule);
     openknx.addModule(8, openknxUsbExchangeModule);
-    #if defined(KNX_IP_W5500) || defined(KNX_IP_GENERIC) || defined(KNX_IP_WIFI)
+    #if defined(KNX_IP_LAN) || defined(KNX_IP_WIFI)
     openknx.addModule(7, openknxNetwork);
     #endif
 #endif
