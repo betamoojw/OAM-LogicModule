@@ -10,13 +10,13 @@
                                              
 #define MAIN_OpenKnxId 0xA0
 #define MAIN_ApplicationNumber 48
-#define MAIN_ApplicationVersion 52
+#define MAIN_ApplicationVersion 53
 #define MAIN_ParameterSize 11475
 #define MAIN_MaxKoNumber 316
 #define MAIN_OrderNumber "OpenKnxLogic"
 #define BASE_ModuleVersion 18
 #define UCT_ModuleVersion 2
-#define LOG_ModuleVersion 52
+#define LOG_ModuleVersion 53
 // Parameter with single occurrence
 
 
@@ -1365,9 +1365,9 @@
 #define LOG_fOOutputFilter                      53      // 2 Bits, Bit 4-3
 #define     LOG_fOOutputFilterMask 0x18
 #define     LOG_fOOutputFilterShift 3
-#define LOG_fOSendOnChange                      53      // 1 Bit, Bit 3
-#define     LOG_fOSendOnChangeMask 0x08
-#define     LOG_fOSendOnChangeShift 3
+#define LOG_fOSendOnChange                      53      // 1 Bit, Bit 2
+#define     LOG_fOSendOnChangeMask 0x04
+#define     LOG_fOSendOnChangeShift 2
 #define LOG_fODpt                               54      // 8 Bits, Bit 7-0
 #define LOG_fOOn                                55      // 8 Bits, Bit 7-0
 #define LOG_fOOnBuzzer                          55      // 8 Bits, Bit 7-0
