@@ -1,8 +1,7 @@
 OpenKNX - LogicModule
+===
 
 **Dieses Release ist vollständig im [OAM-RaumController](https://github.com/OpenKNX/OAM-RaumController/releases) enthalten. Nur dort wird die neuste Hardware unterstützt. Bei Neuinstallationen unbedingt den RaumController verwenden!** 
-
-===
 
 Implementation of a knx logic module with up to 99 logic channels based on the [knx stack](https://github.com/OpenKNX/knx), a fork from [thelsing](https://github.com/thelsing/knx).
 
